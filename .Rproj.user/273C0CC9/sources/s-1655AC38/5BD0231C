@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1599854446682.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5BD0231C",
+    "lastKnownWriteTime" : 1600292668,
+    "last_content_update" : -2147483648,
+    "path" : "C:/Users/Personal/Desktop/RProjects/IBC_VS_TC/IBC_VS_TC.R",
+    "project_path" : "IBC_VS_TC.R",
+    "properties" : {
+        "cursorPosition" : "112,0",
+        "scrollLine" : "96"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
