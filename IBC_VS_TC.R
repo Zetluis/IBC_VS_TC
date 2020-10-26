@@ -93,19 +93,21 @@ IBC_VS_TC <- combined_data_plot %>%
   ggplot(aes(Fecha, Valor_indice, group = Indice, color = Indice)) +
   geom_line(size = 1.25) 
 
-IBC_VS_TC + theme_clean() + scale_color_calc() + scale_x_date(breaks = "3 months", date_labels = "%b-%Y") + labs(title = "Crecimiento Dólar Paralelo VS Índice Bursátil de Caracas", x = NULL, y = "Indice. Diciembre 2018 = 100\n", caption = "@luisfrein") + scale_colour_calc(labels = c("Índice Bursátil de Caracas", "Dólar Paralelo")) + theme(legend.position = c(0.15, 0.735)) 
+IBC_VS_TC + theme_clean() + scale_color_calc() + scale_x_date(breaks = "3 months", date_labels = "%b-%Y") + labs(title = "Crecimiento Dólar Paralelo VS Índice Bursátil de Caracas", x = NULL, y = "Indice. Diciembre 2018 = 100\n", caption = "@luisfreii") + scale_colour_calc(labels = c("Índice Bursátil de Caracas", "Dólar Paralelo")) + theme(legend.position = c(0.15, 0.735)) 
 
 #Checking the distribution of the data
 combined_data_plot %>% 
-  ggplot(aes(Valor_indice)) +
-  geom_histogram()
+  ggplot(aes(Valor_indice, fill = Indice)) +
+  geom_histogram(position = "dodge") +
+  theme_clean() + scale_fill_hc(labels = c("Índice IBC", "Índice TC")) +
+  labs(title = "Histograma de Índices", x = "Índice", y = NULL, caption = "@luisfreii")
 
 #Given that the data is skewed to the right, I will make another plot with log transformation.
 IBC_VS_TC2 <- combined_data_plot %>% 
   ggplot(aes(Fecha, log(Valor_indice), group = Indice, color = Indice)) +
   geom_line(size = 1.25)
 
-IBC_VS_TC2 + theme_clean() + scale_color_calc() + scale_x_date(breaks = "3 months", date_labels = "%b-%Y") + labs(title = "Crecimiento Dólar Paralelo VS Índice Bursátil de Caracas", x = NULL, y = "Indice Escala Logarítmica\n") + scale_colour_calc(labels = c("Índice Bursátil de Caracas", "Dólar Paralelo")) + theme(legend.position = c(0.15, 0.7))
+IBC_VS_TC2 + theme_clean() + scale_color_calc() + scale_x_date(breaks = "3 months", date_labels = "%b-%Y") + labs(title = "Crecimiento Dólar Paralelo VS Índice Bursátil de Caracas", x = NULL, y = "Indice Escala Logarítmica\n", caption = "@luisfreii") + scale_colour_calc(labels = c("Índice Bursátil de Caracas", "Dólar Paralelo")) + theme(legend.position = c(0.15, 0.7))
 
 
 
